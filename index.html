@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================
+       SEO META TAGS - EDIT BAGIAN INI UNTUK SEO
+       ============================================ -->
+  <title>INSYNTIVE — Where Insight Becomes Your Competitive Advantage</title>
+  <meta name="description" content="Platform sertifikasi, training, konsultansi, dan produk digital untuk berbagai industri di Indonesia: mining, konstruksi, logistik, telekomunikasi, manufaktur, hingga korporasi umum. Dibangun oleh praktisi 8+ tahun.">
+  <meta name="keywords" content="training corporate indonesia, konsultansi bisnis, power bi indonesia, data analytics indonesia, training mining, training konstruksi, training logistik, training telco, csms training, safety management, dashboard consulting, ai automation">
+  <meta name="author" content="INSYNTIVE">
+
+  <!-- Open Graph (untuk preview di WhatsApp, LinkedIn, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insyntive.com/">
+  <meta property="og:title" content="INSYNTIVE — Where Insight Becomes Your Competitive Advantage">
+  <meta property="og:description" content="Training, konsultansi, dan produk digital untuk berbagai industri di Indonesia.">
+  <meta property="og:image" content="https://insyntive.com/assets/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="INSYNTIVE — Where Insight Becomes Your Competitive Advantage">
+  <meta name="twitter:description" content="Training, konsultansi, dan produk digital untuk industri mining, konstruksi, dan korporasi Indonesia.">
+  <meta name="twitter:image" content="https://insyntive.com/assets/og-image.jpg">
+
+  <!-- Favicon (ganti dengan favicon lo nanti) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F1F1F'/%3E%3Ctext x='50' y='68' font-family='Arial Black' font-size='60' font-weight='900' text-anchor='middle' fill='%2302A0C1'%3EI%3C/text%3E%3C/svg%3E">
+
+  <!-- Plus Jakarta Sans (brand font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       DESIGN TOKENS — EDIT WARNA & FONT DI SINI
+       Semua warna brand INSYNTIVE ada di sini.
+       Ubah satu, semua section ikut berubah.
+       ============================================ */
+    :root {
+      /* Brand Colors */
+      --color-primary: #02A0C1;       /* Cyan utama */
+      --color-secondary: #3581E1;     /* Blue secondary */
+      --color-accent: #D6FD91;        /* Lime green - untuk CTA & highlight */
+      --color-mint: #97D1C6;          /* Mint - subtle accent */
+      --color-pale-blue: #D7E8FB;     /* Pale blue - background lembut */
+      --color-light: #EDEDED;         /* Light gray */
+      --color-dark: #1F1F1F;          /* Near black - text utama */
+
+      /* Derived colors */
+      --color-bg: #FAFBFC;
+      --color-text: #1F1F1F;
+      --color-text-soft: #4A5560;
+      --color-text-muted: #8B95A1;
+      --color-border: rgba(31, 31, 31, 0.08);
+      --color-glass: rgba(255, 255, 255, 0.6);
+
+      /* Typography */
+      --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+      /* Spacing */
+      --section-pad: clamp(80px, 10vw, 140px);
+      --container: 1280px;
+      --gutter: clamp(24px, 5vw, 48px);
+
+      /* Radius */
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 40px;
+
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(2, 160, 193, 0.06);
+      --shadow-md: 0 12px 32px rgba(2, 160, 193, 0.08);
+      --shadow-lg: 0 24px 60px rgba(2, 160, 193, 0.12);
+      --shadow-glow: 0 0 80px rgba(214, 253, 145, 0.4);
+
+      /* Transitions */
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --t-fast: 0.2s var(--ease);
+      --t-med: 0.4s var(--ease);
+      --t-slow: 0.7s var(--ease);
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    /* ============================================
+       AMBIENT BACKGROUND BLOBS (brand element)
+       Blurred blue/mint elements yang nge-float
+       ============================================ */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      transition: all var(--t-med);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--color-dark);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(2, 160, 193, 0.35);
+    }
+    .btn-accent {
+      background: var(--color-accent);
+      color: var(--color-dark);
+    }
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(214, 253, 145, 0.6);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-dark);
+      border: 1.5px solid var(--color-border);
+    }
+    .btn-ghost:hover {
+      border-color: var(--color-dark);
+      background: var(--color-dark);
+      color: white;
+    }
+    .btn-arrow { transition: transform var(--t-fast); }
+    .btn:hover .btn-arrow { transform: translateX(4px); }
+
+    /* ============================================
+       HEADER (Sticky, glass effect saat scroll)
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all var(--t-med);
+    }
+    .header.scrolled {
+      background: rgba(250, 251, 252, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--color-border);
+      padding: 14px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      color: var(--color-dark);
+    }
+    .logo span { color: var(--color-primary); }
+    .nav-list {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+    .nav-list a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text-soft);
+      transition: color var(--t-fast);
+    }
+    .nav-list a:hover { color: var(--color-dark); }
+    .header-cta { display: flex; gap: 12px; align-items: center; }
+    .menu-toggle { display: none; }
+
+    @media (max-width: 900px) {
+      .nav-list, .header-cta .btn-ghost { display: none; }
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+      }
+      .menu-toggle span {
+        width: 22px;
+        height: 2px;
+        background: var(--color-dark);
+        border-radius: 2px;
+      }
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      position: relative;
+      padding-top: 180px;
+      padding-bottom: 100px;
+      overflow: hidden;
+    }
+    .hero .blob-1 {
+      top: 10%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+      opacity: 0.18;
+    }
+    .hero .blob-2 {
+      bottom: -20%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+      opacity: 0.4;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-soft);
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-eyebrow .dot {
+      width: 8px; height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(214, 253, 145, 0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(214, 253, 145, 0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(214, 253, 145, 0.15); }
+    }
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 76px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--color-dark);
+      margin-bottom: 28px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute;
+      bottom: 6px; left: 0; right: 0;
+      height: 14px;
+      background: var(--color-accent);
+      z-index: -1;
+      opacity: 0.5;
+      transform: skewX(-12deg);
+    }
+    .hero p {
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--color-text-soft);
+      max-width: 540px;
+      margin-bottom: 36px;
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Card (right side) */
+    .hero-card {
+      background: var(--color-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, white, transparent);
+      mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      pointer-events: none;
+    }
+    .hero-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .hero-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .hero-stat:last-child { border-bottom: none; }
+    .hero-stat-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--color-dark);
+      letter-spacing: -0.03em;
+      min-width: 90px;
+    }
+    .hero-stat-label {
+      font-size: 14px;
+      color: var(--color-text-soft);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding-top: 130px; padding-bottom: 60px; }
+    }
+
+    /* ============================================
+       MARQUEE (industry pills, auto-scroll)
+       ============================================ */
+    .marquee {
+      padding: 24px 0;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 16px;
+      animation: marquee 40s linear infinite;
+      width: max-content;
+    }
+    .marquee-pill {
+      padding: 10px 22px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-soft);
+      white-space: nowrap;
+      transition: all var(--t-fast);
+    }
+    .marquee-pill:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ============================================
+       SECTION HEADERS (reusable)
+       ============================================ */
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 64px;
+    }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-dark);
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      font-size: clamp(16px, 1.3vw, 18px);
+      color: var(--color-text-soft);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       TRUSTED BY
+       ============================================ */
+    .trusted {
+      padding: var(--section-pad) 0 80px;
+    }
+    .trusted-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding: 40px;
+      background: var(--color-pale-blue);
+      border-radius: var(--radius-lg);
+    }
+    .trusted-stat .num {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--color-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .trusted-stat .label {
+      font-size: 14px;
+      color: var(--color-text-soft);
+      font-weight: 500;
+    }
+    .logo-row {
+      margin-top: 56px;
+      padding: 36px 0;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    }
+    .logo-track {
+      display: flex;
+      gap: 72px;
+      align-items: center;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+      padding: 0 40px;
+    }
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 64px;
+      min-width: 160px;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all var(--t-med);
+      white-space: nowrap;
+    }
+    .logo-item:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    .logo-item span {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-dark);
+      letter-spacing: -0.02em;
+    }
+    .logo-item img {
+      max-height: 56px;
+      max-width: 180px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 700px) {
+      .trusted-stats { grid-template-columns: repeat(2, 1fr); padding: 28px; }
+    }
+
+    /* ============================================
+       PILLARS (Three Service Cards)
+       ============================================ */
+    .pillars {
+      padding: var(--section-pad) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillars .blob-1 {
+      top: 30%; right: -20%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, var(--color-mint) 0%, transparent 70%);
+      opacity: 0.25;
+    }
+    .pillars-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      position: relative;
+      padding: 40px 32px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: all var(--t-med);
+      overflow: hidden;
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, var(--accent-color, var(--color-primary)));
+      opacity: 0;
+      transition: opacity var(--t-med);
+    }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .pillar-card:hover::before { opacity: 0.06; }
+    .pillar-card:nth-child(1) { --accent-color: var(--color-primary); }
+    .pillar-card:nth-child(2) { --accent-color: var(--color-secondary); }
+    .pillar-card:nth-child(3) { --accent-color: var(--color-accent); }
+
+    .pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+      background: var(--accent-color);
+      color: var(--color-dark);
+    }
+    .pillar-card:nth-child(1) .pillar-icon,
+    .pillar-card:nth-child(2) .pillar-icon { color: white; }
+
+    .pillar-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-dark);
+      margin-bottom: 10px;
+    }
+    .pillar-card .pillar-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    .pillar-card p {
+      color: var(--color-text-soft);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .pillar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pillar-tag {
+      padding: 6px 12px;
+      background: var(--color-light);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-soft);
+    }
+    @media (max-width: 900px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       PROCESS (4 steps)
+       ============================================ */
+    .process {
+      padding: var(--section-pad) 0;
+      background: var(--color-dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .process .blob-1 {
+      top: -20%; left: 50%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+      opacity: 0.2;
+    }
+    .process .section-title { color: white; }
+    .process .section-subtitle { color: rgba(255, 255, 255, 0.7); }
+    .process .section-eyebrow { color: var(--color-accent); }
+
+    .process-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .process-step {
+      position: relative;
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      transition: all var(--t-med);
+    }
+    .process-step:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--color-accent);
+    }
+    .process-num {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+    .process-step h4 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .process-step p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       INDUSTRIES (2 big cards)
+       ============================================ */
+    .industries {
+      padding: var(--section-pad) 0;
+    }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .industry-card {
+      position: relative;
+      padding: 36px 32px;
+      border-radius: var(--radius-md);
+      background: white;
+      border: 1px solid var(--color-border);
+      transition: all var(--t-med);
+      overflow: hidden;
+    }
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t-med);
+    }
+    .industry-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .industry-card:hover::before { transform: scaleX(1); }
+
+    .industry-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .industry-card:nth-child(1) .industry-icon { background: var(--color-pale-blue); }
+    .industry-card:nth-child(2) .industry-icon { background: var(--color-mint); }
+    .industry-card:nth-child(3) .industry-icon { background: var(--color-accent); }
+    .industry-card:nth-child(4) .industry-icon { background: var(--color-light); }
+    .industry-card:nth-child(5) .industry-icon { background: var(--color-pale-blue); }
+    .industry-card:nth-child(6) .industry-icon { background: var(--color-mint); }
+
+    .industry-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+    .industry-card p {
+      color: var(--color-text-soft);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .industries-grid { grid-template-columns: 1fr; }
+      .industry-card { padding: 28px 24px; }
+    }
+
+    /* ============================================
+       PRODUCTS (Digital Products)
+       ============================================ */
+    .products {
+      padding: var(--section-pad) 0;
+      background: var(--color-pale-blue);
+      position: relative;
+      overflow: hidden;
+    }
+    .products .blob-1 {
+      bottom: -30%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+      opacity: 0.5;
+    }
+    .products-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      padding: 32px 24px;
+      background: white;
+      border-radius: var(--radius-md);
+      transition: all var(--t-med);
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-card .icon {
+      width: 48px; height: 48px;
+      background: var(--color-light);
+      border-radius: var(--radius-sm);
+      display: grid; place-items: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      transition: all var(--t-med);
+    }
+    .product-card:hover .icon {
+      background: var(--color-accent);
+    }
+    .product-card .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .product-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--color-dark);
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 14px;
+      color: var(--color-text-soft);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       WHY (Big stats counter)
+       ============================================ */
+    .why {
+      padding: var(--section-pad) 0;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .stat-card {
+      padding: 32px 28px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: all var(--t-med);
+    }
+    .stat-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .stat-card:nth-child(1) { background: var(--color-accent); border-color: transparent; }
+    .stat-card:nth-child(4) { background: var(--color-dark); border-color: transparent; color: white; }
+    .stat-card:nth-child(4) .stat-label { color: rgba(255,255,255,0.7); }
+    .stat-num {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: var(--color-text-soft);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    @media (max-width: 900px) {
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ============================================
+       TESTIMONIALS
+       ============================================ */
+    .testimonials {
+      padding: var(--section-pad) 0;
+      background: var(--color-light);
+      position: relative;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      padding: 32px;
+      background: white;
+      border-radius: var(--radius-md);
+      transition: all var(--t-med);
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .testimonial-quote {
+      font-size: 48px;
+      line-height: 1;
+      color: var(--color-primary);
+      font-family: serif;
+      margin-bottom: 12px;
+    }
+    .testimonial-text {
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+    }
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      display: grid; place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .testimonial-info .name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--color-dark);
+    }
+    .testimonial-info .role {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    @media (max-width: 900px) {
+      .testimonial-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       INSIGHT (Instagram link)
+       ============================================ */
+    .insight {
+      padding: var(--section-pad) 0;
+    }
+    .insight-card {
+      padding: 60px;
+      background: linear-gradient(135deg, var(--color-dark) 0%, #2a2a2a 100%);
+      border-radius: var(--radius-xl);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-card::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+      opacity: 0.3;
+    }
+    .insight-content { position: relative; z-index: 1; }
+    .insight-card h3 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .insight-card p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+    .insight-visual {
+      position: relative;
+      z-index: 1;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 80px;
+      transition: transform var(--t-med);
+    }
+    .insight-visual:hover { transform: rotate(-3deg) scale(1.02); }
+    @media (max-width: 900px) {
+      .insight-card { grid-template-columns: 1fr; padding: 36px; gap: 32px; }
+      .insight-visual { max-width: 240px; margin: 0 auto; }
+    }
+
+    /* ============================================
+       CONTACT (Form + Info)
+       ============================================ */
+    .contact {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact .blob-1 {
+      top: 20%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--color-mint) 0%, transparent 70%);
+      opacity: 0.3;
+    }
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+    }
+    .contact-info h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--color-dark);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--color-text-soft);
+      font-size: 17px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .contact-list { display: grid; gap: 16px; margin-bottom: 32px; }
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--t-fast);
+    }
+    .contact-item:hover {
+      border-color: var(--color-primary);
+      transform: translateX(4px);
+    }
+    .contact-item-icon {
+      width: 40px; height: 40px;
+      background: var(--color-pale-blue);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .contact-item-value {
+      font-weight: 600;
+      color: var(--color-dark);
+      font-size: 15px;
+    }
+
+    /* Form */
+    .contact-form {
+      padding: 40px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 8px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--color-dark);
+      background: white;
+      transition: all var(--t-fast);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(2, 160, 193, 0.1);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: inherit;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--color-dark);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      transition: all var(--t-med);
+      margin-top: 8px;
+    }
+    .form-submit:hover {
+      background: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(2, 160, 193, 0.35);
+    }
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(214, 253, 145, 0.3);
+      color: #2d5a1f;
+      border: 1px solid var(--color-accent);
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(255, 100, 100, 0.1);
+      color: #b91c1c;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+    }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px; }
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 80px 0 32px;
+      background: var(--color-dark);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { color: white; font-size: 26px; }
+    .footer-brand p {
+      max-width: 320px;
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .footer-social a {
+      width: 40px; height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      transition: all var(--t-fast);
+    }
+    .footer-social a:hover {
+      background: var(--color-accent);
+      color: var(--color-dark);
+    }
+    .footer h4 {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+    .footer-links { display: grid; gap: 10px; }
+    .footer-links a {
+      font-size: 14px;
+      transition: color var(--t-fast);
+    }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       FLOATING WHATSAPP BUTTON
+       ============================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+      transition: all var(--t-med);
+      animation: waPulse 2s infinite;
+    }
+    .wa-float:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
+    }
+    .wa-float svg { width: 22px; height: 22px; }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4), 0 0 0 16px rgba(37, 211, 102, 0); }
+    }
+    @media (max-width: 600px) {
+      .wa-float .wa-text { display: none; }
+      .wa-float { padding: 16px; bottom: 16px; right: 16px; }
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+    .reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+    .reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+    .reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+    .reveal-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+    .reveal-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+       Edit nav menu di sini
+       ============================================ -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">IN<span>SYNTI</span>VE</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#industri">Industri</a></li>
+          <li><a href="#produk">Digital Tools</a></li>
+          <li><a href="#kontak">Hubungi Kami</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#kontak" class="btn btn-ghost">Konsultasi Gratis</a>
+        <a href="#kontak" class="btn btn-accent">
+          Mulai
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO SECTION
+       Edit headline & subheadline di sini
+       ============================================ -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="hero-eyebrow">
+            <span class="dot"></span>
+            Certification · Training · Consulting · Digital Product
+          </span>
+          <h1>Where Insight Becomes <em>Your Competitive Advantage</em></h1>
+          <p>Platform sertifikasi, training, konsultansi, dan produk digital yang dibangun oleh praktisi dengan pengalaman lebih dari 8 tahun. Solusi nyata untuk organisasi yang ingin tumbuh lebih cerdas dan beroperasi lebih aman.</p>
+          <div class="hero-actions">
+            <a href="#kontak" class="btn btn-primary">
+              Konsultasi Gratis
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <h3>Quick Snapshot</h3>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="8">0</span>
+            <span class="hero-stat-label">Tahun pengalaman praktisi industri</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="2500" data-suffix="+">0</span>
+            <span class="hero-stat-label">Peserta training di seluruh Indonesia</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="28">0</span>
+            <span class="hero-stat-label">Provinsi terjangkau</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INDUSTRY MARQUEE (auto-scroll pills)
+       Edit list industri di sini
+       ============================================ -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-pill">⛏️ Coal Mining</span>
+      <span class="marquee-pill">💎 Nickel & Mineral</span>
+      <span class="marquee-pill">🏗️ Heavy Construction</span>
+      <span class="marquee-pill">⚡ Oil & Gas Support</span>
+      <span class="marquee-pill">📋 Contractor CSMS</span>
+      <span class="marquee-pill">🦺 Safety Management</span>
+      <span class="marquee-pill">📊 Data Analytics</span>
+      <span class="marquee-pill">📈 Power BI & Excel</span>
+      <span class="marquee-pill">🤖 AI & Automation</span>
+      <!-- Duplicate untuk seamless loop -->
+      <span class="marquee-pill">⛏️ Coal Mining</span>
+      <span class="marquee-pill">💎 Nickel & Mineral</span>
+      <span class="marquee-pill">🏗️ Heavy Construction</span>
+      <span class="marquee-pill">⚡ Oil & Gas Support</span>
+      <span class="marquee-pill">📋 Contractor CSMS</span>
+      <span class="marquee-pill">🦺 Safety Management</span>
+      <span class="marquee-pill">📊 Data Analytics</span>
+      <span class="marquee-pill">📈 Power BI & Excel</span>
+      <span class="marquee-pill">🤖 AI & Automation</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       TRUSTED BY
+       Edit list klien & angka stats di sini
+       ============================================ -->
+  <section class="trusted">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Trusted By</span>
+        <h2 class="section-title">Dipercaya oleh perusahaan terkemuka</h2>
+        <p class="section-subtitle">Dari telekomunikasi, logistik, hingga mining dan energi. INSYNTIVE telah memberikan dampak nyata bagi organisasi di seluruh Indonesia.</p>
+      </div>
+
+      <div class="trusted-stats reveal-stagger">
+        <div class="trusted-stat">
+          <div class="num" data-count="6" data-suffix="+">0</div>
+          <div class="label">Perusahaan</div>
+        </div>
+        <div class="trusted-stat">
+          <div class="num" data-count="2500" data-suffix="+">0</div>
+          <div class="label">Peserta Training</div>
+        </div>
+        <div class="trusted-stat">
+          <div class="num" data-count="28">0</div>
+          <div class="label">Provinsi</div>
+        </div>
+        <div class="trusted-stat">
+          <div class="num">2022</div>
+          <div class="label">Sejak</div>
+        </div>
+      </div>
+
+      <!--
+        ============================================
+        LOGO PERUSAHAAN — 3 CARA SETUP (pilih salah satu)
+
+        CARA 1 (DEFAULT): Pakai logo.dev (gratis, butuh token)
+          1. Daftar di https://www.logo.dev (gratis, 2 menit)
+          2. Copy publishable token lo (formatnya: pk_xxxxx)
+          3. Replace semua "pk_YOUR_TOKEN_HERE" di bawah ini dengan token lo
+          4. Selesai, logo auto-load. Kalo logo perusahaan gak ada di database
+             logo.dev, otomatis fallback ke text (handled by onerror)
+
+        CARA 2 (RECOMMENDED): Self-host logo di repo GitHub lo
+          1. Download logo resmi tiap perusahaan (link ada di README)
+          2. Save ke folder `assets/logos/` di repo
+          3. Ganti <img src="..."> jadi <img src="assets/logos/nama.svg">
+
+        CARA 3 (FALLBACK): Text gede aja (kalo logo gak tersedia)
+          Hapus tag <img>, biarin <span class="logo-text">NAMA</span>
+        ============================================
+      -->
+      <div class="logo-row">
+        <div class="logo-track">
+          <div class="logo-item">
+            <img src="https://img.logo.dev/xlsmart.co.id?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="XLSmart" onerror="this.outerHTML='<span>XLSmart</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/sicepat.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="SiCepat Ekspres" onerror="this.outerHTML='<span>SiCepat</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/markplusinstitute.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Markplus Institute" onerror="this.outerHTML='<span>Markplus</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/itmg.co.id?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Indo Tambangraya Megah" onerror="this.outerHTML='<span>ITM</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/alamtri.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="AlamTri" onerror="this.outerHTML='<span>AlamTri</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/pamapersada.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Pamapersada Nusantara" onerror="this.outerHTML='<span>PAMA</span>'">
+          </div>
+          <!-- Duplicate untuk seamless loop animation -->
+          <div class="logo-item">
+            <img src="https://img.logo.dev/xlsmart.co.id?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="XLSmart" onerror="this.outerHTML='<span>XLSmart</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/sicepat.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="SiCepat Ekspres" onerror="this.outerHTML='<span>SiCepat</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/markplusinstitute.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Markplus Institute" onerror="this.outerHTML='<span>Markplus</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/itmg.co.id?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Indo Tambangraya Megah" onerror="this.outerHTML='<span>ITM</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/alamtri.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="AlamTri" onerror="this.outerHTML='<span>AlamTri</span>'">
+          </div>
+          <div class="logo-item">
+            <img src="https://img.logo.dev/pamapersada.com?token=pk_YOUR_TOKEN_HERE&size=200&format=png&retina=true" alt="Pamapersada Nusantara" onerror="this.outerHTML='<span>PAMA</span>'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LAYANAN / THREE PILLARS
+       Edit isi 3 pilar di sini
+       ============================================ -->
+  <section class="pillars" id="layanan">
+    <div class="blob blob-1"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Layanan Kami</span>
+        <h2 class="section-title">Tiga pilar INSYNTIVE</h2>
+        <p class="section-subtitle">Dari ruang kelas ke lapangan tambang. Kami deliver solusi yang benar-benar bekerja.</p>
+      </div>
+
+      <div class="pillars-grid reveal-stagger">
+        <div class="pillar-card">
+          <div class="pillar-icon">🎓</div>
+          <h3>INSYNTIVE Academy</h3>
+          <div class="pillar-sub">Training & Sertifikasi</div>
+          <p>Program pelatihan publik dan korporat yang dirancang khusus untuk industri berat. Berbasis kompetensi nyata, bukan teori generik.</p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Public Training</span>
+            <span class="pillar-tag">In-house Training</span>
+            <span class="pillar-tag">Data Analytics</span>
+            <span class="pillar-tag">Safety & CSMS</span>
+            <span class="pillar-tag">Sertifikasi</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">⚙️</div>
+          <h3>INSYNTIVE Advisory</h3>
+          <div class="pillar-sub">Consulting & Advisory</div>
+          <p>Konsultansi teknis dan strategis. Kami tidak hanya rekomendasikan, kami implementasi bersama tim Anda sampai berjalan.</p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">CSMS Implementation</span>
+            <span class="pillar-tag">Safety Audit</span>
+            <span class="pillar-tag">Data Strategy</span>
+            <span class="pillar-tag">Process Redesign</span>
+            <span class="pillar-tag">Dashboard System</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">💻</div>
+          <h3>INSYNTIVE Studio</h3>
+          <div class="pillar-sub">Digital Products & Tools</div>
+          <p>Template, dashboard, dan toolkit digital siap pakai. Langsung plug & play dengan data perusahaan Anda, tanpa perlu build dari nol.</p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Excel Templates</span>
+            <span class="pillar-tag">Power BI Dashboard</span>
+            <span class="pillar-tag">CSMS Toolkit</span>
+            <span class="pillar-tag">Safety KPI Tracker</span>
+            <span class="pillar-tag">Mining Templates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROCESS / HOW WE WORK (4 steps)
+       Edit 4 langkah di sini
+       ============================================ -->
+  <section class="process">
+    <div class="blob blob-1"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Cara Kerja</span>
+        <h2 class="section-title">Dari kebutuhan ke solusi nyata</h2>
+        <p class="section-subtitle">Empat tahap yang kami jalankan untuk memastikan setiap solusi benar-benar relevan dan berkelanjutan.</p>
+      </div>
+
+      <div class="process-grid reveal-stagger">
+        <div class="process-step">
+          <div class="process-num">01 —</div>
+          <h4>Discovery & Assessment</h4>
+          <p>Kami pelajari kondisi, tantangan, dan tujuan spesifik perusahaan Anda. Tidak ada solusi copy-paste.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02 —</div>
+          <h4>Solution Design</h4>
+          <p>Kami rancang program atau solusi yang presisi, disesuaikan dengan industri, skala, dan tim Anda.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03 —</div>
+          <h4>Delivery & Implementation</h4>
+          <p>Eksekusi di lapangan. Training disampaikan, sistem dibangun, tools diimplementasi bersama tim Anda.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">04 —</div>
+          <h4>Measure & Sustain</h4>
+          <p>Kami ukur hasilnya. Pastikan perubahan bertahan, bukan hanya saat project selesai, tapi jangka panjang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INDUSTRIES (Multi-industry, general)
+       Edit list industri di sini, gampang tambah/kurang
+       ============================================ -->
+  <section class="industries" id="industri">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Industri yang Kami Layani</span>
+        <h2 class="section-title">Pengalaman lintas sektor</h2>
+        <p class="section-subtitle">Praktisi INSYNTIVE punya pengalaman di banyak industri di Indonesia. Setiap solusi kami sesuaikan dengan karakteristik dan kebutuhan bisnis Anda.</p>
+      </div>
+
+      <div class="industries-grid reveal-stagger">
+        <div class="industry-card">
+          <div class="industry-icon">⛏️</div>
+          <h3>Mining & Mineral</h3>
+          <p>Coal, nickel, dan mineral processing. Memahami regulasi ESDM, SMKP, dan ekosistem tambang Indonesia.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🏗️</div>
+          <h3>Konstruksi & EPC</h3>
+          <p>Project management, governance proyek, dan manajemen kontraktor untuk industri berat.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🚛</div>
+          <h3>Logistik & Supply Chain</h3>
+          <p>Operasional warehouse, distribusi, dan supply chain analytics untuk perusahaan logistik dan ekspedisi.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">📡</div>
+          <h3>Telekomunikasi</h3>
+          <p>Network operations, customer analytics, dan transformasi digital untuk perusahaan telco.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🏭</div>
+          <h3>Manufaktur</h3>
+          <p>Process improvement, KPI monitoring, dan operational analytics untuk pabrik dan heavy industry.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">💼</div>
+          <h3>Korporasi Umum</h3>
+          <p>Business analytics, data governance, dan dashboard executive untuk semua sektor bisnis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       DIGITAL PRODUCTS
+       Edit 4 kategori produk di sini
+       ============================================ -->
+  <section class="products" id="produk">
+    <div class="blob blob-1"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">INSYNTIVE Studio</span>
+        <h2 class="section-title">Digital products siap pakai</h2>
+        <p class="section-subtitle">Template, dashboard, ebook, dan online course yang dirancang oleh praktisi industri. Beli, download, dan langsung gunakan.</p>
+      </div>
+
+      <div class="products-grid reveal-stagger">
+        <div class="product-card">
+          <div class="icon">📊</div>
+          <div class="tag">Power BI Template</div>
+          <h4>Operations Dashboard Pack</h4>
+          <p>Dashboard siap pakai untuk monitoring operasional, safety, dan produktivitas. Plug & play dengan data perusahaan Anda.</p>
+        </div>
+        <div class="product-card">
+          <div class="icon">📋</div>
+          <div class="tag">Excel & Spreadsheet</div>
+          <h4>Business Analytics Toolkit</h4>
+          <p>Kumpulan template Excel dan spreadsheet untuk analitik bisnis, laporan manajemen, dan monitoring KPI.</p>
+        </div>
+        <div class="product-card">
+          <div class="icon">📖</div>
+          <div class="tag">E-Book</div>
+          <h4>Panduan Praktis Industri</h4>
+          <p>Seri ebook praktis dari praktisi berpengalaman: data analytics, safety governance, CSMS, dan manajemen kontraktor.</p>
+        </div>
+        <div class="product-card">
+          <div class="icon">🎓</div>
+          <div class="tag">Online Course</div>
+          <h4>INSYNTIVE Learning Series</h4>
+          <p>Kursus online bersertifikat yang bisa diakses kapan saja. Topik: data analytics, Power BI, Excel lanjutan, dan safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY INSYNTIVE (Stats counter)
+       Edit angka & label di sini
+       ============================================ -->
+  <section class="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="reveal">
+          <span class="section-eyebrow">Kenapa INSYNTIVE</span>
+          <h2 class="section-title">Bukan vendor. Mitra transformasi.</h2>
+          <p class="section-subtitle">INSYNTIVE hadir bukan untuk memenuhi checklist training tahunan, tapi untuk membangun kapabilitas yang bertahan lama di organisasi Anda.</p>
+          <div style="margin-top: 32px;">
+            <a href="#kontak" class="btn btn-primary">
+              Mulai Sekarang
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="why-stats reveal-stagger">
+          <div class="stat-card">
+            <div class="stat-num" data-count="8" data-suffix="+">0</div>
+            <div class="stat-label">Tahun pengalaman praktisi di industri, bukan sekadar pengajar teori</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3 in 1</div>
+            <div class="stat-label">Training + Consulting + Digital Products dalam satu platform</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">All-in</div>
+            <div class="stat-label">Cocok untuk semua sektor bisnis: mining, konstruksi, hingga korporasi umum</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">Data+</div>
+            <div class="stat-label">Setiap solusi berbasis data dan pengalaman lapangan yang terukur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS
+       Edit/tambah testimonial di sini
+       Ganti nama, role, perusahaan sesuai data real
+       ============================================ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="section-eyebrow">Testimoni</span>
+        <h2 class="section-title">Apa kata mereka</h2>
+        <p class="section-subtitle">Insight dari perusahaan dan profesional yang telah berkolaborasi bersama INSYNTIVE.</p>
+      </div>
+
+      <div class="testimonial-grid reveal-stagger">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Trainingnya bukan teori biasa. Praktisi yang ngajar, jadi langsung relevan dengan masalah lapangan kami sehari-hari.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-info">
+              <div class="name">[Nama Klien]</div>
+              <div class="role">Operations Manager, [Perusahaan]</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Dashboard yang dibangun INSYNTIVE memberikan visibility yang sebelumnya tidak kami punya. Game changer untuk decision making.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">B</div>
+            <div class="testimonial-info">
+              <div class="name">[Nama Klien]</div>
+              <div class="role">VP Data Analytics, [Perusahaan]</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Tim INSYNTIVE bukan cuma kasih rekomendasi, tapi implementasi sampai sistemnya benar-benar jalan. Beda dari konsultan biasa.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C</div>
+            <div class="testimonial-info">
+              <div class="name">[Nama Klien]</div>
+              <div class="role">HSE Director, [Perusahaan]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LATEST INSIGHT (Instagram link)
+       ============================================ -->
+  <section class="insight">
+    <div class="container">
+      <div class="insight-card reveal">
+        <div class="insight-content">
+          <span class="section-eyebrow" style="color: var(--color-accent);">Latest Content</span>
+          <h3>Ikuti tips harian dari praktisi langsung di Instagram</h3>
+          <p>Power BI, Excel, data analytics, dan productivity insight setiap minggu. Sudah lebih dari 32.000 profesional yang follow.</p>
+          <a href="https://instagram.com/dhanyindraswara" target="_blank" rel="noopener" class="btn btn-accent">
+            Follow @dhanyindraswara
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+        <a href="https://instagram.com/dhanyindraswara" target="_blank" rel="noopener" class="insight-visual" aria-label="Instagram">
+          📸
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT / FORM SECTION
+       Form action: ganti URL Formspree di tag <form>
+       ============================================ -->
+  <section class="contact" id="kontak">
+    <div class="blob blob-1"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-eyebrow">Hubungi Kami</span>
+          <h2>Siap membawa tim Anda ke level berikutnya?</h2>
+          <p>Ceritakan tantangan Anda. Kami akan respond dalam 1×24 jam dengan solusi yang relevan. Gratis, tanpa commitment.</p>
+
+          <div class="contact-list">
+            <a href="https://wa.me/6281805759025?text=Halo%20Insyntive%20saya%20ingin%20bertanya%20mengenai%20......" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-item-icon">💬</div>
+              <div>
+                <div class="contact-item-label">WhatsApp</div>
+                <div class="contact-item-value">+62 818-0575-9025 (Dhany)</div>
+              </div>
+            </a>
+            <a href="mailto:halomas@dhanyindraswara.com" class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <div class="contact-item-label">Email Utama</div>
+                <div class="contact-item-value">halomas@dhanyindraswara.com</div>
+              </div>
+            </a>
+            <a href="mailto:dhanyindraswara@gmail.com" class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <div class="contact-item-label">Email Alternatif</div>
+                <div class="contact-item-value">dhanyindraswara@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ============================================
+             FORM
+             GANTI action="..." dengan URL Formspree lo:
+             https://formspree.io/f/YOUR_FORM_ID
+             ============================================ -->
+        <form class="contact-form reveal"
+              id="contactForm"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Nama Lengkap</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Perusahaan</label>
+              <input type="text" id="company" name="company" class="form-input" placeholder="PT ABC Indonesia">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="email@perusahaan.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">No. WhatsApp</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+62 812 3456 7890">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="service">Layanan yang Diminati</label>
+            <select id="service" name="service" class="form-select" required>
+              <option value="">Pilih layanan</option>
+              <option value="academy">INSYNTIVE Academy (Training & Sertifikasi)</option>
+              <option value="advisory">INSYNTIVE Advisory (Consulting)</option>
+              <option value="studio">INSYNTIVE Studio (Digital Products)</option>
+              <option value="other">Lainnya / Konsultasi Umum</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Ceritakan kebutuhan Anda</label>
+            <textarea id="message" name="message" class="form-textarea" required placeholder="Misal: Kami butuh training Power BI untuk tim 20 orang di departemen operasional..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            Kirim Pesan
+            <span class="btn-arrow">→</span>
+          </button>
+
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       Edit info kontak & link sosmed di sini
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">IN<span style="color: var(--color-accent);">SYNTI</span>VE</a>
+          <p>Platform sertifikasi, training, konsultansi, dan produk digital untuk berbagai industri di Indonesia.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/dhanyindraswara" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="https://wa.me/6281805759025" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Layanan</h4>
+          <ul class="footer-links">
+            <li><a href="#layanan">INSYNTIVE Academy</a></li>
+            <li><a href="#layanan">INSYNTIVE Advisory</a></li>
+            <li><a href="#produk">INSYNTIVE Studio</a></li>
+            <li><a href="#layanan">Public Training</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Industri</h4>
+          <ul class="footer-links">
+            <li><a href="#industri">Mining & Mineral</a></li>
+            <li><a href="#industri">Konstruksi & EPC</a></li>
+            <li><a href="#industri">Heavy Industry</a></li>
+            <li><a href="#industri">Oil & Gas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Kontak</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:halomas@dhanyindraswara.com">halomas@dhanyindraswara.com</a></li>
+            <li><a href="mailto:dhanyindraswara@gmail.com">dhanyindraswara@gmail.com</a></li>
+            <li><a href="https://wa.me/6281805759025">+62 818-0575-9025 (Dhany)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 INSYNTIVE. All rights reserved.</div>
+        <div>Built with insight, by practitioners.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING WHATSAPP BUTTON
+       Ganti nomor WA di href bila perlu
+       ============================================ -->
+  <a href="https://wa.me/6281805759025?text=Halo%20Insyntive%20saya%20ingin%20bertanya%20mengenai%20......"
+     target="_blank"
+     rel="noopener"
+     class="wa-float"
+     aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.91l-1.05 3.86 3.95-1.04A7.93 7.93 0 0 0 12.05 20h.01c4.38 0 7.95-3.57 7.96-7.96 0-2.13-.83-4.13-2.42-5.72zm-5.55 12.23h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 0 1-1.01-3.5c0-3.65 2.97-6.62 6.62-6.62 1.77 0 3.43.69 4.68 1.94 1.25 1.25 1.94 2.91 1.94 4.68-.01 3.65-2.98 6.59-6.63 6.59zm3.63-4.95c-.2-.1-1.18-.58-1.36-.65-.18-.07-.31-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05a5.45 5.45 0 0 1-2.7-2.36c-.2-.35.2-.32.58-1.08.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34-.12 0-.25-.02-.39-.02a.74.74 0 0 0-.53.25c-.18.2-.7.69-.7 1.67 0 .98.71 1.93.81 2.06.1.13 1.4 2.13 3.39 2.99 1.26.55 1.76.59 2.39.5.39-.06 1.18-.48 1.34-.95.16-.47.16-.87.12-.95-.05-.08-.18-.13-.38-.22z"/>
+    </svg>
+    <span class="wa-text">Chat WhatsApp</span>
+  </a>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+  <script>
+    // ============================================
+    // 1. STICKY HEADER (transparan → solid saat scroll)
+    // ============================================
+    const header = document.getElementById('header');
+    const onScroll = () => {
+      if (window.scrollY > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ============================================
+    // 2. SCROLL REVEAL ANIMATION
+    // Section fade-in saat masuk viewport
+    // ============================================
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // ============================================
+    // 3. COUNTER ANIMATION
+    // Angka counting up dari 0 saat terlihat
+    // ============================================
+    const animateCount = (el) => {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const startTime = performance.now();
+
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const value = Math.floor(eased * target);
+        el.textContent = value.toLocaleString('id-ID') + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString('id-ID') + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.target.dataset.count) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(el));
+
+    // ============================================
+    // 4. CONTACT FORM (submit ke Formspree)
+    // ============================================
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Mengirim...';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formStatus.className = 'form-status success';
+          formStatus.textContent = '✓ Pesan berhasil terkirim! Kami akan respond dalam 1×24 jam.';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (err) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = '✗ Gagal mengirim. Coba lagi atau hubungi via WhatsApp di bawah.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Kirim Pesan <span class="btn-arrow">→</span>';
+      }
+    });
+
+    // ============================================
+    // 5. SMOOTH SCROLL untuk anchor links
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
